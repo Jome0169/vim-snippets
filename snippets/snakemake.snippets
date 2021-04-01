@@ -1,0 +1,20 @@
+snippet docs
+	"""
+	File: ${1:`vim_snippets#Filename('$1.py', 'foo.py')`}
+	Author: `g:snips_author`
+	Email: `g:snips_email`
+	Github: `g:snips_github`
+	Description: ${0}
+	"""
+
+snippet rule
+	rule ${1:fname}:
+		input:
+			${2}
+		params:
+			${3}
+		output:
+			${4}
+		message: ${5}
+		threads:${6:1}
+		shell:"""${3: $1}"""
